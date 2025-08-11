@@ -19,7 +19,7 @@ class ProfileScreen extends StatelessWidget {
           ProfileCard(
             name: "Sepide",
             email: "theflutterway@gmail.com",
-            imageSrc: "https://i.imgur.com/IXnwbLk.png",
+            imageSrc: "",
             // proLableText: "Sliver",
             // isPro: true, if the user is pro
             press: () {
@@ -33,8 +33,7 @@ class ProfileScreen extends StatelessWidget {
               onTap: () {},
               child: const AspectRatio(
                 aspectRatio: 1.8,
-                child:
-                    NetworkImageWithLoader("https://i.imgur.com/dz0BBom.png"),
+                child: NetworkImageWithLoader("", kind: 'banner'),
               ),
             ),
           ),

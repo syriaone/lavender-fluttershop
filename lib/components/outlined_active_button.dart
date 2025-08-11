@@ -20,7 +20,9 @@ class OutlinedActiveButton extends StatelessWidget {
       onPressed: press,
       style: isActive
           ? OutlinedButton.styleFrom(
-              backgroundColor: primaryColor, foregroundColor: Colors.white)
+              backgroundColor: Theme.of(context).colorScheme.primary,
+              foregroundColor: Colors.white,
+            )
           : null,
       child: Text(text),
     );

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop/constants.dart';
 import 'package:shop/models/product_model.dart';
+import 'package:shop/components/empty_state.dart';
 
 import 'components/wallet_balance_card.dart';
 import 'components/wallet_history_card.dart';
@@ -37,33 +38,10 @@ class WalletScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SliverList(
-                delegate: SliverChildBuilderDelegate(
-                  (context, index) => Padding(
-                    padding: const EdgeInsets.only(top: defaultPadding),
-                    child: WalletHistoryCard(
-                      isReturn: index == 1,
-                      date: "JUN 12, 2020",
-                      amount: 129,
-                      products: [
-                        ProductModel(
-                          image: productDemoImg1,
-                          title: "Mountain Warehouse for Women",
-                          brandName: "Lipsy london",
-                          price: 540,
-                          priceAfetDiscount: 420,
-                          dicountpercent: 20,
-                        ),
-                        ProductModel(
-                          image: productDemoImg4,
-                          title: "Mountain Beta Warehouse",
-                          brandName: "Lipsy london",
-                          price: 800,
-                        ),
-                      ],
-                    ),
-                  ),
-                  childCount: 4,
+              const SliverToBoxAdapter(
+                child: Padding(
+                  padding: EdgeInsets.only(top: defaultPadding),
+                  child: EmptyState(title: 'No items'),
                 ),
               )
             ],

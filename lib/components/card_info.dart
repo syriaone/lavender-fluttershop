@@ -53,20 +53,24 @@ class CardInfo extends StatelessWidget {
                                 "assets/icons/card.svg",
                                 height: 32,
                                 width: 32,
-                                colorFilter: const ColorFilter.mode(
-                                    Colors.white, BlendMode.srcIn),
+                                 colorFilter: ColorFilter.mode(
+                                     Theme.of(context).cardColor,
+                                     BlendMode.srcIn),
                               ),
                               if (isSelected)
                                 CircleAvatar(
                                   radius: 12,
-                                  backgroundColor: Colors.white,
+                                   backgroundColor: Theme.of(context).cardColor,
                                   child: Padding(
                                     padding: const EdgeInsets.all(
                                         defaultPadding / 4),
                                     child: SvgPicture.asset(
                                       "assets/icons/Singlecheck.svg",
-                                      colorFilter: const ColorFilter.mode(
-                                          primaryColor, BlendMode.srcIn),
+                                       colorFilter: ColorFilter.mode(
+                                           Theme.of(context)
+                                               .colorScheme
+                                               .primary,
+                                           BlendMode.srcIn),
                                     ),
                                   ),
                                 )
@@ -75,8 +79,11 @@ class CardInfo extends StatelessWidget {
                           const Spacer(),
                           Text(
                             "**** **** **** $last4Digits",
-                            style: const TextStyle(
-                                color: Colors.white,
+                            style: TextStyle(
+                                color: Theme.of(context)
+                                    .textTheme
+                                    .bodyMedium!
+                                    .color,
                                 fontSize: 18,
                                 fontWeight: FontWeight.w500),
                           ),
@@ -98,9 +105,13 @@ class CardInfo extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.all(defaultPadding),
                           child: DefaultTextStyle(
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontWeight: FontWeight.w500,
-                              color: Colors.white70,
+                              color: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium!
+                                  .color
+                                  ?.withOpacity(0.7),
                             ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,

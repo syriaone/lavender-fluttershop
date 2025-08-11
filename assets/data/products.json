@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "title": "Lavender Tee",
+    "category": "Men",
+    "price": 540,
+    "currency": "SYP",
+    "thumbnail": "",
+    "description": "Soft cotton tee in lavender palette",
+    "brand": "Lavender Co",
+    "discountPercent": 20,
+    "priceAfterDiscount": 432
+  },
+  {
+    "id": 2,
+    "title": "Beta Warehouse Jacket",
+    "category": "Women",
+    "price": 800,
+    "currency": "SYP",
+    "thumbnail": "",
+    "description": "Lightweight jacket for all seasons",
+    "brand": "Lavender Co"
+  },
+  {
+    "id": 3,
+    "title": "Nike Air Max 270 React",
+    "category": "Men",
+    "price": 650.62,
+    "currency": "SYP",
+    "thumbnail": "",
+    "description": "Comfort sneakers with modern style",
+    "brand": "Nike",
+    "discountPercent": 40,
+    "priceAfterDiscount": 390.36
+  },
+  {
+    "id": 4,
+    "title": "Green Poplin Ruched Front",
+    "category": "Women",
+    "price": 1264,
+    "currency": "SYP",
+    "thumbnail": "",
+    "description": "Elegant ruched dress",
+    "brand": "Lavender Co",
+    "discountPercent": 5,
+    "priceAfterDiscount": 1200.8
+  },
+  {
+    "id": 5,
+    "title": "Satin Corset Top",
+    "category": "Women",
+    "price": 654,
+    "currency": "SYP",
+    "thumbnail": "",
+    "description": "Classic satin corset",
+    "brand": "Lavender Co"
+  },
+  {
+    "id": 6,
+    "title": "Tiered Swing Dress",
+    "category": "Kids",
+    "price": 400,
+    "currency": "SYP",
+    "thumbnail": "",
+    "description": "Playful kids dress",
+    "brand": "Lavender Co"
+  },
+  {
+    "id": 7,
+    "title": "Mountain Jacket Kids",
+    "category": "Kids",
+    "price": 360,
+    "currency": "SYP",
+    "thumbnail": "",
+    "description": "Warm jacket for kids",
+    "brand": "Lavender Co",
+    "discountPercent": 10,
+    "priceAfterDiscount": 324
+  },
+  {
+    "id": 8,
+    "title": "Lavender Candle",
+    "category": "Home",
+    "price": 120,
+    "currency": "SYP",
+    "thumbnail": "",
+    "description": "Scented candle with lavender notes",
+    "brand": "Lavender Co"
+  },
+  {
+    "id": 9,
+    "title": "Beauty Serum",
+    "category": "Beauty",
+    "price": 980,
+    "currency": "SYP",
+    "thumbnail": "",
+    "description": "Hydrating serum",
+    "brand": "Lavender Co"
+  },
+  {
+    "id": 10,
+    "title": "Lavender Hoodie",
+    "category": "Men",
+    "price": 990,
+    "currency": "SYP",
+    "thumbnail": "",
+    "description": "Cozy hoodie in lavender",
+    "brand": "Lavender Co"
+  }
+]
+
+

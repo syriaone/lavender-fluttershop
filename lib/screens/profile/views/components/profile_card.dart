@@ -31,6 +31,7 @@ class ProfileCard extends StatelessWidget {
         child: NetworkImageWithLoader(
           imageSrc,
           radius: 100,
+          kind: 'avatar',
         ),
       ),
       title: Row(

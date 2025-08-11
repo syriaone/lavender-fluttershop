@@ -22,10 +22,13 @@ class _LoginScreenState extends State<LoginScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Image.asset(
-              "assets/images/login_dark.png",
-              fit: BoxFit.cover,
-            ),
+            Builder(builder: (context) {
+              final isDark = Theme.of(context).brightness == Brightness.dark;
+              final authArt = isDark
+                  ? 'assets/branding/auth_dark.png'
+                  : 'assets/branding/auth_light.png';
+              return Image.asset(authArt, fit: BoxFit.contain);
+            }),
             Padding(
               padding: const EdgeInsets.all(defaultPadding),
               child: Column(

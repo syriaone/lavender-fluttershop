@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../constants.dart';
+import '../../utils/format.dart';
 import '../network_image_with_loader.dart';
 
 class ProductCard extends StatelessWidget {
@@ -34,24 +35,27 @@ class ProductCard extends StatelessWidget {
             aspectRatio: 1.15,
             child: Stack(
               children: [
-                NetworkImageWithLoader(image, radius: defaultBorderRadious),
+                NetworkImageWithLoader(image, radius: defaultBorderRadious, kind: 'product'),
                 if (dicountpercent != null)
                   Positioned(
                     right: defaultPadding / 2,
                     top: defaultPadding / 2,
-                    child: Container(
+                      child: Container(
                       padding: const EdgeInsets.symmetric(
                           horizontal: defaultPadding / 2),
                       height: 16,
-                      decoration: const BoxDecoration(
-                        color: errorColor,
-                        borderRadius: BorderRadius.all(
-                            Radius.circular(defaultBorderRadious)),
-                      ),
+                        decoration: BoxDecoration(
+                          color: Theme.of(context).colorScheme.error,
+                          borderRadius: const BorderRadius.all(
+                              Radius.circular(defaultBorderRadious)),
+                        ),
                       child: Text(
                         "$dicountpercent% off",
-                        style: const TextStyle(
-                            color: Colors.white,
+                          style: TextStyle(
+                              color: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium!
+                                  .color,
                             fontSize: 10,
                             fontWeight: FontWeight.w500),
                       ),
@@ -89,16 +93,16 @@ class ProductCard extends StatelessWidget {
                       ? Row(
                           children: [
                             Text(
-                              "\$$priceAfetDiscount",
-                              style: const TextStyle(
-                                color: Color(0xFF31B0D8),
+                              PriceFmt.syp(priceAfetDiscount ?? price),
+                              style: TextStyle(
+                                color: Theme.of(context).colorScheme.primary,
                                 fontWeight: FontWeight.w500,
                                 fontSize: 12,
                               ),
                             ),
                             const SizedBox(width: defaultPadding / 4),
                             Text(
-                              "\$$price",
+                              PriceFmt.syp(price),
                               style: TextStyle(
                                 color: Theme.of(context)
                                     .textTheme
@@ -111,9 +115,9 @@ class ProductCard extends StatelessWidget {
                           ],
                         )
                       : Text(
-                          "\$$price",
-                          style: const TextStyle(
-                            color: Color(0xFF31B0D8),
+                          PriceFmt.syp(price),
+                          style: TextStyle(
+                            color: Theme.of(context).colorScheme.primary,
                             fontWeight: FontWeight.w500,
                             fontSize: 12,
                           ),

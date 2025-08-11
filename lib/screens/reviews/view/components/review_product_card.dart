@@ -19,7 +19,7 @@ class ReviewProductInfoCard extends StatelessWidget {
         SizedBox(
           height: 80,
           width: 80,
-          child: NetworkImageWithLoader(image),
+          child: NetworkImageWithLoader(image, kind: 'product'),
         ),
         const SizedBox(width: defaultPadding),
         Expanded(

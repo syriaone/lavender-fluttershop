@@ -4,6 +4,7 @@ import 'package:shop/models/product_model.dart';
 import 'package:shop/route/route_constants.dart';
 
 import '../../../constants.dart';
+import '../../../components/empty_state.dart';
 
 class BookmarkScreen extends StatelessWidget {
   const BookmarkScreen({super.key});
@@ -18,31 +19,36 @@ class BookmarkScreen extends StatelessWidget {
           SliverPadding(
             padding: const EdgeInsets.symmetric(
                 horizontal: defaultPadding, vertical: defaultPadding),
-            sliver: SliverGrid(
-              gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                maxCrossAxisExtent: 200.0,
-                mainAxisSpacing: defaultPadding,
-                crossAxisSpacing: defaultPadding,
-                childAspectRatio: 0.66,
-              ),
-              delegate: SliverChildBuilderDelegate(
-                (BuildContext context, int index) {
-                  return ProductCard(
-                    image: demoPopularProducts[index].image,
-                    brandName: demoPopularProducts[index].brandName,
-                    title: demoPopularProducts[index].title,
-                    price: demoPopularProducts[index].price,
-                    priceAfetDiscount:
-                        demoPopularProducts[index].priceAfetDiscount,
-                    dicountpercent: demoPopularProducts[index].dicountpercent,
-                    press: () {
-                      Navigator.pushNamed(context, productDetailsScreenRoute);
-                    },
-                  );
-                },
-                childCount: demoPopularProducts.length,
-              ),
-            ),
+            sliver: demoPopularProducts.isEmpty
+                ? const SliverToBoxAdapter(child: EmptyState(title: 'No items'))
+                : SliverGrid(
+                    gridDelegate:
+                        const SliverGridDelegateWithMaxCrossAxisExtent(
+                      maxCrossAxisExtent: 200.0,
+                      mainAxisSpacing: defaultPadding,
+                      crossAxisSpacing: defaultPadding,
+                      childAspectRatio: 0.66,
+                    ),
+                    delegate: SliverChildBuilderDelegate(
+                      (BuildContext context, int index) {
+                        return ProductCard(
+                          image: demoPopularProducts[index].image,
+                          brandName: demoPopularProducts[index].brandName,
+                          title: demoPopularProducts[index].title,
+                          price: demoPopularProducts[index].price,
+                          priceAfetDiscount:
+                              demoPopularProducts[index].priceAfetDiscount,
+                          dicountpercent:
+                              demoPopularProducts[index].dicountpercent,
+                          press: () {
+                            Navigator.pushNamed(
+                                context, productDetailsScreenRoute);
+                          },
+                        );
+                      },
+                      childCount: demoPopularProducts.length,
+                    ),
+                  ),
           ),
         ],
       ),

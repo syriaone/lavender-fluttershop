@@ -21,12 +21,18 @@ class _SignUpScreenState extends State<SignUpScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Image.asset(
-              "assets/images/signUp_dark.png",
-              height: MediaQuery.of(context).size.height * 0.35,
-              width: double.infinity,
-              fit: BoxFit.cover,
-            ),
+            Builder(builder: (context) {
+              final isDark = Theme.of(context).brightness == Brightness.dark;
+              final authArt = isDark
+                  ? 'assets/branding/auth_dark.png'
+                  : 'assets/branding/auth_light.png';
+              return Image.asset(
+                authArt,
+                height: MediaQuery.of(context).size.height * 0.35,
+                width: double.infinity,
+                fit: BoxFit.contain,
+              );
+            }),
             Padding(
               padding: const EdgeInsets.all(defaultPadding),
               child: Column(
@@ -78,9 +84,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   const SizedBox(height: defaultPadding * 2),
                   ElevatedButton(
                     onPressed: () {
-                      // There is 2 more screens while user complete their profile
-                      // afre sign up, it's available on the pro version get it now
-                      // 🔗 https://theflutterway.gumroad.com/l/fluttershop
+                      // There are more screens for profile completion in some templates
                       Navigator.pushNamed(context, entryPointScreenRoute);
                     },
                     child: const Text("Continue"),

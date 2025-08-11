@@ -4,6 +4,7 @@ import 'package:shop/models/product_model.dart';
 
 import '../../../../constants.dart';
 import '../../../../route/route_constants.dart';
+import '../../../../components/empty_state.dart';
 
 class MostPopular extends StatelessWidget {
   const MostPopular({
@@ -25,34 +26,36 @@ class MostPopular extends StatelessWidget {
         ),
         // While loading use 👇
         // SeconderyProductsSkelton(),
-        SizedBox(
-          height: 114,
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            // Find demoPopularProducts on models/ProductModel.dart
-            itemCount: demoPopularProducts.length,
-            itemBuilder: (context, index) => Padding(
-              padding: EdgeInsets.only(
-                left: defaultPadding,
-                right: index == demoPopularProducts.length - 1
-                    ? defaultPadding
-                    : 0,
-              ),
-              child: SecondaryProductCard(
-                image: demoPopularProducts[index].image,
-                brandName: demoPopularProducts[index].brandName,
-                title: demoPopularProducts[index].title,
-                price: demoPopularProducts[index].price,
-                priceAfetDiscount: demoPopularProducts[index].priceAfetDiscount,
-                dicountpercent: demoPopularProducts[index].dicountpercent,
-                press: () {
-                  Navigator.pushNamed(context, productDetailsScreenRoute,
-                      arguments: index.isEven);
-                },
+        if (demoPopularProducts.isEmpty)
+          const SizedBox(height: 114, child: EmptyState(title: 'No items'))
+        else
+          SizedBox(
+            height: 114,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: demoPopularProducts.length,
+              itemBuilder: (context, index) => Padding(
+                padding: EdgeInsets.only(
+                  left: defaultPadding,
+                  right: index == demoPopularProducts.length - 1
+                      ? defaultPadding
+                      : 0,
+                ),
+                child: SecondaryProductCard(
+                  image: demoPopularProducts[index].image,
+                  brandName: demoPopularProducts[index].brandName,
+                  title: demoPopularProducts[index].title,
+                  price: demoPopularProducts[index].price,
+                  priceAfetDiscount: demoPopularProducts[index].priceAfetDiscount,
+                  dicountpercent: demoPopularProducts[index].dicountpercent,
+                  press: () {
+                    Navigator.pushNamed(context, productDetailsScreenRoute,
+                        arguments: index.isEven);
+                  },
+                ),
               ),
             ),
-          ),
-        )
+          )
       ],
     );
   }
