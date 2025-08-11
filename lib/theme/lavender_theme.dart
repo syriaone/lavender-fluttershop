@@ -15,7 +15,6 @@ class LavenderTheme {
     colorScheme: const ColorScheme.light(
       primary: primary,
       surface: Colors.white,
-      background: Colors.white,
     ),
     scaffoldBackgroundColor: Colors.white,
     appBarTheme: const AppBarTheme(
@@ -36,7 +35,6 @@ class LavenderTheme {
     colorScheme: const ColorScheme.dark(
       primary: primary,
       surface: card,
-      background: bg,
     ),
     scaffoldBackgroundColor: bg,
     appBarTheme: const AppBarTheme(
@@ -55,5 +53,3 @@ class LavenderTheme {
     useMaterial3: true,
   );
 }
-
-

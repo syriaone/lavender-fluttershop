@@ -5,7 +5,6 @@ class LocalRepository {
   static Future<List<dynamic>> categories() async {
     final s = await rootBundle.loadString('assets/data/categories.json');
     return jsonDecode(s) as List<dynamic>;
-    
   }
 
   static Future<List<dynamic>> products() async {
@@ -13,5 +12,3 @@ class LocalRepository {
     return jsonDecode(s) as List<dynamic>;
   }
 }
-
-

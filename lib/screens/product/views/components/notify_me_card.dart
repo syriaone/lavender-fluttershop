@@ -29,11 +29,8 @@ class NotifyMeCard extends StatelessWidget {
             border: Border.all(
               color: isNotify
                   ? Colors.transparent
-                  : Theme.of(context)
-                      .textTheme
-                      .bodyLarge!
-                      .color!
-                      .withOpacity(0.1),
+                  : Theme.of(context).textTheme.bodyLarge!.color!
+                ..withValues(alpha: 0.1),
             ),
           ),
           child: Padding(
@@ -70,7 +67,7 @@ class NotifyMeCard extends StatelessWidget {
                 CupertinoSwitch(
                   onChanged: onChanged,
                   value: isNotify,
-                  activeColor: primaryMaterialColor.shade900,
+                  activeTrackColor: primaryMaterialColor.shade900,
                 )
               ],
             ),

@@ -14,7 +14,8 @@ class EmptyState extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(Icons.inbox_outlined, size: 48, color: Theme.of(context).colorScheme.primary),
+            Icon(Icons.inbox_outlined,
+                size: 48, color: Theme.of(context).colorScheme.primary),
             const SizedBox(height: 12),
             Text(title, style: t.titleMedium),
             if (subtitle != null) ...[
@@ -22,7 +23,7 @@ class EmptyState extends StatelessWidget {
               Text(
                 subtitle!,
                 style: t.bodyMedium?.copyWith(
-                  color: t.bodyMedium?.color?.withOpacity(.7),
+                  color: t.bodyMedium?.color?..withValues(alpha: .7),
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -33,5 +34,3 @@ class EmptyState extends StatelessWidget {
     );
   }
 }
-
-

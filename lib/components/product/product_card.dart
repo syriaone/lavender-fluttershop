@@ -35,27 +35,26 @@ class ProductCard extends StatelessWidget {
             aspectRatio: 1.15,
             child: Stack(
               children: [
-                NetworkImageWithLoader(image, radius: defaultBorderRadious, kind: 'product'),
+                NetworkImageWithLoader(image,
+                    radius: defaultBorderRadious, kind: 'product'),
                 if (dicountpercent != null)
                   Positioned(
                     right: defaultPadding / 2,
                     top: defaultPadding / 2,
-                      child: Container(
+                    child: Container(
                       padding: const EdgeInsets.symmetric(
                           horizontal: defaultPadding / 2),
                       height: 16,
-                        decoration: BoxDecoration(
-                          color: Theme.of(context).colorScheme.error,
-                          borderRadius: const BorderRadius.all(
-                              Radius.circular(defaultBorderRadious)),
-                        ),
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).colorScheme.error,
+                        borderRadius: const BorderRadius.all(
+                            Radius.circular(defaultBorderRadious)),
+                      ),
                       child: Text(
                         "$dicountpercent% off",
-                          style: TextStyle(
-                              color: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium!
-                                  .color,
+                        style: TextStyle(
+                            color:
+                                Theme.of(context).textTheme.bodyMedium!.color,
                             fontSize: 10,
                             fontWeight: FontWeight.w500),
                       ),

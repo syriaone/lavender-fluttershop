@@ -54,7 +54,8 @@ class _ProductImagesState extends State<ProductImages> {
                   borderRadius: const BorderRadius.all(
                     Radius.circular(defaultBorderRadious * 2),
                   ),
-                  child: NetworkImageWithLoader(widget.images[index], kind: 'product'),
+                  child: NetworkImageWithLoader(widget.images[index],
+                      kind: 'product'),
                 ),
               ),
             ),
@@ -81,11 +82,10 @@ class _ProductImagesState extends State<ProductImages> {
                                 : defaultPadding / 4),
                         child: CircleAvatar(
                           radius: 3,
-                          backgroundColor: Theme.of(context)
-                              .textTheme
-                              .bodyLarge!
-                              .color!
-                              .withOpacity(index == _currentPage ? 1 : 0.2),
+                          backgroundColor:
+                              Theme.of(context).textTheme.bodyLarge!.color!
+                                ..withValues(
+                                    alpha: index == _currentPage ? 1 : 0.2),
                         ),
                       ),
                     ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class PasswordRecoveryScreen extends StatelessWidget {
   const PasswordRecoveryScreen({super.key});
 

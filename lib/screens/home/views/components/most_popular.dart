@@ -46,7 +46,8 @@ class MostPopular extends StatelessWidget {
                   brandName: demoPopularProducts[index].brandName,
                   title: demoPopularProducts[index].title,
                   price: demoPopularProducts[index].price,
-                  priceAfetDiscount: demoPopularProducts[index].priceAfetDiscount,
+                  priceAfetDiscount:
+                      demoPopularProducts[index].priceAfetDiscount,
                   dicountpercent: demoPopularProducts[index].dicountpercent,
                   press: () {
                     Navigator.pushNamed(context, productDetailsScreenRoute,

@@ -66,7 +66,8 @@ class _ProductBuyNowScreenState extends State<ProductBuyNowScreen> {
                     padding: EdgeInsets.symmetric(horizontal: defaultPadding),
                     child: AspectRatio(
                       aspectRatio: 1.05,
-                      child: NetworkImageWithLoader(productDemoImg1, kind: 'product'),
+                      child: NetworkImageWithLoader(productDemoImg1,
+                          kind: 'product'),
                     ),
                   ),
                 ),

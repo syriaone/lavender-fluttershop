@@ -6,5 +6,3 @@ class PriceFmt {
     return '${f.format(amount)} SYP';
   }
 }
-
-

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shop/constants.dart';
-import 'package:shop/models/product_model.dart';
 import 'package:shop/components/empty_state.dart';
 
 import 'components/wallet_balance_card.dart';
-import 'components/wallet_history_card.dart';
 
 class WalletScreen extends StatelessWidget {
   const WalletScreen({super.key});

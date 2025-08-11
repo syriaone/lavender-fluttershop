@@ -30,7 +30,8 @@ class ReviewCard extends StatelessWidget {
       padding: const EdgeInsets.all(defaultPadding),
       width: double.infinity,
       decoration: BoxDecoration(
-        color: Theme.of(context).textTheme.bodyLarge!.color!.withOpacity(0.035),
+        color: Theme.of(context).textTheme.bodyLarge!.color!
+          ..withValues(alpha: 0.035),
         borderRadius:
             const BorderRadius.all(Radius.circular(defaultBorderRadious)),
       ),
@@ -61,11 +62,8 @@ class ReviewCard extends StatelessWidget {
                   initialRating: rating,
                   itemSize: 20,
                   itemPadding: const EdgeInsets.only(right: defaultPadding / 4),
-                  unratedColor: Theme.of(context)
-                      .textTheme
-                      .bodyLarge!
-                      .color!
-                      .withOpacity(0.08),
+                  unratedColor: Theme.of(context).textTheme.bodyLarge!.color!
+                    ..withValues(alpha: 0.08),
                   glow: false,
                   allowHalfRating: true,
                   ignoreGestures: true,
@@ -127,11 +125,8 @@ class RateBar extends StatelessWidget {
               child: LinearProgressIndicator(
                 minHeight: 6,
                 color: warningColor,
-                backgroundColor: Theme.of(context)
-                    .textTheme
-                    .bodyLarge!
-                    .color!
-                    .withOpacity(0.05),
+                backgroundColor: Theme.of(context).textTheme.bodyLarge!.color!
+                  ..withValues(alpha: 0.05),
                 value: value,
               ),
             ),

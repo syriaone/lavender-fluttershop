@@ -53,24 +53,22 @@ class CardInfo extends StatelessWidget {
                                 "assets/icons/card.svg",
                                 height: 32,
                                 width: 32,
-                                 colorFilter: ColorFilter.mode(
-                                     Theme.of(context).cardColor,
-                                     BlendMode.srcIn),
+                                colorFilter: ColorFilter.mode(
+                                    Theme.of(context).cardColor,
+                                    BlendMode.srcIn),
                               ),
                               if (isSelected)
                                 CircleAvatar(
                                   radius: 12,
-                                   backgroundColor: Theme.of(context).cardColor,
+                                  backgroundColor: Theme.of(context).cardColor,
                                   child: Padding(
                                     padding: const EdgeInsets.all(
                                         defaultPadding / 4),
                                     child: SvgPicture.asset(
                                       "assets/icons/Singlecheck.svg",
-                                       colorFilter: ColorFilter.mode(
-                                           Theme.of(context)
-                                               .colorScheme
-                                               .primary,
-                                           BlendMode.srcIn),
+                                      colorFilter: ColorFilter.mode(
+                                          Theme.of(context).colorScheme.primary,
+                                          BlendMode.srcIn),
                                     ),
                                   ),
                                 )
@@ -107,11 +105,9 @@ class CardInfo extends StatelessWidget {
                           child: DefaultTextStyle(
                             style: TextStyle(
                               fontWeight: FontWeight.w500,
-                              color: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium!
-                                  .color
-                                  ?.withOpacity(0.7),
+                              color:
+                                  Theme.of(context).textTheme.bodyMedium!.color
+                                    ?..withValues(alpha: 0.7),
                             ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,

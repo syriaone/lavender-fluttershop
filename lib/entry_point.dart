@@ -29,9 +29,11 @@ class _EntryPointState extends State<EntryPoint> {
         src,
         height: 24,
         colorFilter: ColorFilter.mode(
-            color ??
-                Theme.of(context).iconTheme.color!.withOpacity(
-                    Theme.of(context).brightness == Brightness.dark ? 0.3 : 1),
+            color ?? Theme.of(context).iconTheme.color!
+              ..withValues(
+                  alpha: Theme.of(context).brightness == Brightness.dark
+                      ? 0.3
+                      : 1),
             BlendMode.srcIn),
       );
     }
@@ -109,30 +111,32 @@ class _EntryPointState extends State<EntryPoint> {
           items: [
             BottomNavigationBarItem(
               icon: svgIcon("assets/icons/Shop.svg"),
-              activeIcon: svgIcon("assets/icons/Shop.svg", color: Theme.of(context).colorScheme.primary),
+              activeIcon: svgIcon("assets/icons/Shop.svg",
+                  color: Theme.of(context).colorScheme.primary),
               label: "Shop",
             ),
             BottomNavigationBarItem(
               icon: svgIcon("assets/icons/Category.svg"),
-              activeIcon:
-                  svgIcon("assets/icons/Category.svg", color: Theme.of(context).colorScheme.primary),
+              activeIcon: svgIcon("assets/icons/Category.svg",
+                  color: Theme.of(context).colorScheme.primary),
               label: "Discover",
             ),
             BottomNavigationBarItem(
               icon: svgIcon("assets/icons/Bookmark.svg"),
-              activeIcon:
-                  svgIcon("assets/icons/Bookmark.svg", color: Theme.of(context).colorScheme.primary),
+              activeIcon: svgIcon("assets/icons/Bookmark.svg",
+                  color: Theme.of(context).colorScheme.primary),
               label: "Bookmark",
             ),
             BottomNavigationBarItem(
               icon: svgIcon("assets/icons/Bag.svg"),
-              activeIcon: svgIcon("assets/icons/Bag.svg", color: Theme.of(context).colorScheme.primary),
+              activeIcon: svgIcon("assets/icons/Bag.svg",
+                  color: Theme.of(context).colorScheme.primary),
               label: "Cart",
             ),
             BottomNavigationBarItem(
               icon: svgIcon("assets/icons/Profile.svg"),
-              activeIcon:
-                  svgIcon("assets/icons/Profile.svg", color: Theme.of(context).colorScheme.primary),
+              activeIcon: svgIcon("assets/icons/Profile.svg",
+                  color: Theme.of(context).colorScheme.primary),
               label: "Profile",
             ),
           ],

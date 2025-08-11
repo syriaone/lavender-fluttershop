@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
-
 class OutlinedActiveButton extends StatelessWidget {
   const OutlinedActiveButton({
     super.key,
